@@ -1,0 +1,2 @@
+Algorithm,Rank,MaxIter,RegParam,RMSE,MAE,Precision_at_10,Recall_at_10,Training_Time_Seconds,Prediction_Time_Seconds,Recommendation_Time_Seconds,Original_Records,Cleaned_Records,Training_Records,Testing_Records
+ALS,10,10,0.1,0.9266808851914397,0.734289538796584,0.017448200654307525,0.01592939047379283,11.519395399998757,8.183567400003085,5.970801199990092,100000,100000,80049,19951

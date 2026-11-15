@@ -1,0 +1,18 @@
+cd C:\movie_recommend\graphx
+
+$env:HADOOP_HOME = "C:\hadoop"
+$env:PATH += ";C:\hadoop\bin"
+
+& "C:\Program Files (x86)\sbt\bin\sbt.bat" "run C:/movie_recommend/backend/dataset/movie_ratings.csv C:/movie_recommend/graphx/output"
+
+
+
+cd C:\movie_recommend\backend
+
+& "C:\Users\kunal\AppData\Local\Programs\Python\Python313\python.exe" train_model.py
+
+
+
+cd C:\movie_recommend\backend
+
+& "C:\Users\kunal\AppData\Local\Programs\Python\Python313\python.exe" -m uvicorn main:app --reload
