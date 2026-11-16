@@ -185,7 +185,7 @@ function MovieCard({ movie, onClick }) {
             {movie.rating_count != null
               ? `${movie.rating_count} ratings`
               : movie.predicted_rating != null
-                ? "ALS prediction"
+                ? (movie.recommendation_source || "Hybrid prediction")
                 : "No rating data"}
           </span>
         </div>
@@ -423,7 +423,7 @@ function App() {
   }
 
   // ------------------------------------
-  // ALS RECOMMENDATIONS
+  // HYBRID ALS + GRAPHX RECOMMENDATIONS
   // ------------------------------------
 
   async function handleRecommendations(event) {
@@ -443,7 +443,7 @@ function App() {
 
     try {
       const data = await apiGet(
-        `/recommend/${id}?limit=10`
+        `/hybrid-recommend/${id}?limit=10`
       );
 
       const mapped = data.map((item) => {
@@ -470,6 +470,7 @@ function App() {
             "Recommended",
           predicted_rating:
             item.predicted_rating ??
+            item.hybrid_score ??
             item.prediction ??
             item.rating,
         };
@@ -479,7 +480,7 @@ function App() {
 
       if (!mapped.length) {
         setMessage(
-          "No recommendations available for this user."
+          "No hybrid recommendations available for this user."
         );
       }
     } catch (err) {
@@ -1026,7 +1027,7 @@ function App() {
 
               <p>
                 Get personalized recommendations
-                from your ALS model.
+                powered by your hybrid ALS + GraphX recommendation model.
               </p>
             </div>
 
@@ -1063,7 +1064,7 @@ function App() {
             {recommendations.length > 0 && (
               <div className="recommendation-heading">
                 <h2>Your Recommendations</h2>
-                <span>Powered by ALS</span>
+                <span>Powered by ALS + GraphX Hybrid</span>
               </div>
             )}
 
@@ -1207,6 +1208,12 @@ function MovieModal({ movie, onClose }) {
           {movie.rating_count != null && (
             <p className="modal-overview">
               Based on {movie.rating_count} viewer ratings.
+            </p>
+          )}
+
+          {movie.recommendation_source && (
+            <p className="modal-overview">
+              Recommendation source: {movie.recommendation_source}
             </p>
           )}
 

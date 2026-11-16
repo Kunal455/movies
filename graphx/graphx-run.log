@@ -1,0 +1,89 @@
+WARNING: A terminally deprecated method in sun.misc.Unsafe has been called
+WARNING: sun.misc.Unsafe::objectFieldOffset has been called by scala.runtime.LazyVals$ (file:/home/codespace/.sbt/launchers/1.13.1/sbt-launch.jar)
+WARNING: Please consider reporting this to the maintainers of class scala.runtime.LazyVals$
+WARNING: sun.misc.Unsafe::objectFieldOffset will be removed in a future release
+WARNING: A restricted method in java.lang.System has been called
+WARNING: java.lang.System::load has been called by com.sun.jna.Native in an unnamed module (file:/home/codespace/.sbt/boot/scala-2.12.21/org.scala-sbt/sbt/1.13.1/jna-5.19.0.jar)
+WARNING: Use --enable-native-access=ALL-UNNAMED to avoid a warning for callers in this module
+WARNING: Restricted methods will be blocked in a future release unless native access is enabled
+
+[info] welcome to sbt 1.13.1 (Microsoft Java 25.0.5.0.2)
+[info] loading project definition from /workspaces/movies/graphx/project
+[info] loading settings for project root from build.sbt...
+[info] set current project to cinematch-graphx (in build file:/workspaces/movies/graphx/)
+[info] running (fork) MovieGraph /workspaces/movies/backend/dataset/movie_ratings.csv /workspaces/movies/backend/graphx_recommendations.csv
+[error] WARNING: package sun.security.action not in java.base
+[info] STEP 1: Starting CineMatch GraphX Engine
+[error] WARNING: A terminally deprecated method in sun.misc.Unsafe has been called
+[error] WARNING: sun.misc.Unsafe::arrayBaseOffset has been called by org.sparkproject.protobuf.UnsafeUtil$MemoryAccessor (file:/workspaces/movies/graphx/target/bg-jobs/sbt_e4957ff3/target/afcdbec7/918c58dd/spark-config_2.13-4.3.0.jar)
+[error] WARNING: Please consider reporting this to the maintainers of class org.sparkproject.protobuf.UnsafeUtil$MemoryAccessor
+[error] WARNING: sun.misc.Unsafe::arrayBaseOffset will be removed in a future release
+[error] Using Spark's default log4j profile: org/apache/spark/log4j2-defaults.properties
+[error] 26/11/15 20:11:59 WARN Utils: Your hostname, codespaces-5973e5, resolves to a loopback address: 127.0.0.1; using 10.0.12.23 instead (on interface eth0)
+[error] 26/11/15 20:11:59 WARN Utils: Set SPARK_LOCAL_IP if you need to bind to another address
+[error] 26/11/15 20:11:59 INFO SparkContext: Running Spark version 4.3.0
+[error] 26/11/15 20:11:59 INFO SparkContext: OS info Linux, 6.8.0-1070-azure, amd64
+[error] 26/11/15 20:11:59 INFO SparkContext: Java version 25.0.5.0.2+1-LTS
+[error] WARNING: A restricted method in java.lang.System has been called
+[error] WARNING: java.lang.System::loadLibrary has been called by org.apache.hadoop.util.NativeCodeLoader in an unnamed module (file:/workspaces/movies/graphx/target/bg-jobs/sbt_e4957ff3/target/b8d87ae3/a27dd2aa/hadoop-client-api-3.5.0.jar)
+[error] WARNING: Use --enable-native-access=ALL-UNNAMED to avoid a warning for callers in this module
+[error] WARNING: Restricted methods will be blocked in a future release unless native access is enabled
+[error] 26/11/15 20:11:59 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+[error] 26/11/15 20:11:59 INFO ResourceUtils: ==============================================================
+[error] 26/11/15 20:11:59 INFO ResourceUtils: No custom resources configured for spark.driver.
+[error] 26/11/15 20:11:59 INFO ResourceUtils: ==============================================================
+[error] 26/11/15 20:11:59 INFO SparkContext: Submitted application: CineMatch GraphX Recommendation Engine
+[error] 26/11/15 20:12:00 INFO SecurityManager: Changing view acls to: codespace
+[error] 26/11/15 20:12:00 INFO SecurityManager: Changing modify acls to: codespace
+[error] 26/11/15 20:12:00 INFO SecurityManager: Changing view acls groups to: codespace
+[error] 26/11/15 20:12:00 INFO SecurityManager: Changing modify acls groups to: codespace
+[error] 26/11/15 20:12:00 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: codespace groups with view permissions: EMPTY; users with modify permissions: codespace; groups with modify permissions: EMPTY; RPC SSL disabled
+[error] 26/11/15 20:12:00 INFO Utils: Successfully started service 'sparkDriver' on port 44657.
+[error] 26/11/15 20:12:00 INFO SparkEnv: Registering MapOutputTracker
+[error] 26/11/15 20:12:00 INFO SparkEnv: Registering BlockManagerMaster
+[error] 26/11/15 20:12:00 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+[error] 26/11/15 20:12:00 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+[error] 26/11/15 20:12:00 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+[error] 26/11/15 20:12:00 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-59f90d4f-986a-4a25-be9d-7c38979d7d7c
+[error] 26/11/15 20:12:00 INFO SparkEnv: Registering OutputCommitCoordinator
+[error] 26/11/15 20:12:01 INFO JettyUtils: Start Jetty 0.0.0.0:4040 for SparkUI
+[error] 26/11/15 20:12:01 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+[error] 26/11/15 20:12:01 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 1, script: , vendor: , memory -> name: memory, amount: 1024, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+[error] 26/11/15 20:12:01 INFO ResourceProfile: Limiting resource is cpu
+[error] 26/11/15 20:12:01 INFO ResourceProfileManager: Added ResourceProfile id: 0
+[error] 26/11/15 20:12:02 INFO SecurityManager: Changing view acls to: codespace
+[error] 26/11/15 20:12:02 INFO SecurityManager: Changing modify acls to: codespace
+[error] 26/11/15 20:12:02 INFO SecurityManager: Changing view acls groups to: codespace
+[error] 26/11/15 20:12:02 INFO SecurityManager: Changing modify acls groups to: codespace
+[error] 26/11/15 20:12:02 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: codespace groups with view permissions: EMPTY; users with modify permissions: codespace; groups with modify permissions: EMPTY; RPC SSL disabled
+[error] 26/11/15 20:12:02 INFO StreamingShuffleManager: Using StreamingShuffleManager
+[error] 26/11/15 20:12:02 INFO Executor: Starting executor ID driver on host 6aee2460-59d0-4c59-a60c-8d18f71a46c5.internal.cloudapp.net
+[error] 26/11/15 20:12:02 INFO Executor: Running Spark version 4.3.0
+[error] 26/11/15 20:12:02 INFO Executor: OS info Linux, 6.8.0-1070-azure, amd64
+[error] 26/11/15 20:12:02 INFO Executor: Java version 25.0.5.0.2+1-LTS
+[error] 26/11/15 20:12:02 INFO Executor: Starting executor with user classpath (userClassPathFirst = false): ''
+[error] 26/11/15 20:12:02 INFO Executor: Created or updated repl class loader org.apache.spark.util.MutableURLClassLoader@57efc6fd for default.
+[error] 26/11/15 20:12:02 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 37025.
+[error] 26/11/15 20:12:02 INFO NettyBlockTransferService: Server created on 6aee2460-59d0-4c59-a60c-8d18f71a46c5.internal.cloudapp.net:37025
+[error] 26/11/15 20:12:02 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+[error] 26/11/15 20:12:02 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, 6aee2460-59d0-4c59-a60c-8d18f71a46c5.internal.cloudapp.net, 37025, None)
+[error] 26/11/15 20:12:02 INFO BlockManagerMasterEndpoint: Registering block manager 6aee2460-59d0-4c59-a60c-8d18f71a46c5.internal.cloudapp.net:37025 with 1011.6 MiB RAM, BlockManagerId(driver, 6aee2460-59d0-4c59-a60c-8d18f71a46c5.internal.cloudapp.net, 37025, None)
+[error] 26/11/15 20:12:02 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, 6aee2460-59d0-4c59-a60c-8d18f71a46c5.internal.cloudapp.net, 37025, None)
+[error] 26/11/15 20:12:02 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, 6aee2460-59d0-4c59-a60c-8d18f71a46c5.internal.cloudapp.net, 37025, None)
+[info] STEP 2: Reading movie ratings CSV
+[info] STEP 3: Ratings loaded successfully: 100000
+[info] STEP 4: Finding users who rated common movies
+[info] STEP 5: Similar user pairs: 406751
+[info] STEP 6: Building GraphX graph
+[info] Graph vertices: 943
+[info] Graph edges: 813502
+[info] STEP 7: Calculating neighboring users
+[info] STEP 8: Neighbor map created: 943 users
+[info] STEP 9: Grouping ratings by user
+[info] Users loaded: 943
+[info] STEP 10: Generating recommendations
+[info] STEP 11: Recommendations generated: 47150
+[info] STEP 12: GraphX recommendations saved successfully!
+[info] Output file: /workspaces/movies/backend/graphx_recommendations.csv
+[info] Spark session stopped
+[success] Total time: 48 s, completed Nov 15, 2026, 8:12:42 PM
