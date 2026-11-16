@@ -16,9 +16,7 @@ from pyspark.ml.evaluation import RegressionEvaluator
 from graphframes import GraphFrame
 from pyspark.sql.functions import lit, concat, explode
 
-# =====================================================
-# STEP 1: PROJECT PATHS
-# =====================================================
+
 
 BASE_DIR = Path(__file__).resolve().parent
 
@@ -31,9 +29,7 @@ RELATIONSHIPS_PATH = BASE_DIR / "user_movie_relationships.csv"
 EVALUATION_PATH = BASE_DIR / "evaluation_results.csv"
 
 
-# =====================================================
-# STEP 2: INITIALIZE SPARK
-# =====================================================
+
 
 spark = (
     SparkSession.builder
@@ -47,9 +43,7 @@ spark.sparkContext.setLogLevel("ERROR")
 
 try:
 
-    # =================================================
-    # STEP 3: LOAD DATASET
-    # =================================================
+
 
     print("\n========== DATA INGESTION ==========")
 
@@ -70,9 +64,7 @@ try:
     print("Original Records:", original_count)
 
 
-    # =================================================
-    # STEP 4: DATA PREPROCESSING
-    # =================================================
+
 
     print("\n========== DATA PREPROCESSING ==========")
 
@@ -104,9 +96,7 @@ try:
     data_final.show(5)
 
 
-    # =================================================
-    # STEP 5: TRAIN TEST SPLIT
-    # =================================================
+
 
     print("\n========== TRAIN TEST SPLIT ==========")
 
@@ -122,9 +112,6 @@ try:
     print("Testing Records:", test_data.count())
 
 
-    # =================================================
-    # STEP 6: ALS MODEL CONFIGURATION
-    # =================================================
 
     print("\n========== ALS MODEL ==========")
 
@@ -140,9 +127,7 @@ try:
     )
 
 
-    # =================================================
-    # STEP 7: TRAIN MODEL AND MEASURE TIME
-    # =================================================
+
 
     print("\n========== MODEL TRAINING ==========")
 
@@ -156,9 +141,6 @@ try:
     print("Training Time:", round(training_time, 3), "seconds")
 
 
-    # =================================================
-    # STEP 8: MAKE PREDICTIONS
-    # =================================================
 
     print("\n========== PREDICTIONS ==========")
 
@@ -181,9 +163,6 @@ try:
     ).show(10)
 
 
-    # =================================================
-    # STEP 9: MODEL EVALUATION
-    # =================================================
 
     print("\n========== MODEL EVALUATION ==========")
 
@@ -206,9 +185,7 @@ try:
     print("MAE:", round(mae, 4))
 
 
-    # =================================================
-    # STEP 10: PRECISION@10 AND RECALL@10
-    # =================================================
+  
 
     print("\n========== RANKING EVALUATION ==========")
 
@@ -264,11 +241,6 @@ try:
     print("Precision@10:", round(precision_at_10, 4))
     print("Recall@10:", round(recall_at_10, 4))
 
-
-    # =================================================
-    # STEP 11: GENERATE TOP 20 RECOMMENDATIONS
-    # =================================================
-
     print("\n========== MOVIE RECOMMENDATIONS ==========")
 
     recommendation_start = time.perf_counter()
@@ -321,14 +293,10 @@ try:
     print("Recommendations saved:", RECOMMENDATION_PATH)
 
 
-    # =================================================
-    # STEP 12: GRAPH-STYLE USER-MOVIE RELATIONSHIPS
-    # =================================================
 
     print("\n========== USER MOVIE RELATIONSHIPS ==========")
 
-    # Each rating represents a relationship (edge)
-    # between a user and a movie.
+
 
     relationships = (
         data_final
@@ -355,9 +323,6 @@ try:
     print("User-movie relationships saved.")
 
 
-    # =================================================
-    # STEP 13: MOST POPULAR MOVIES
-    # =================================================
 
     print("\n========== POPULAR MOVIES ==========")
 
@@ -382,10 +347,6 @@ try:
     print("Popular movies saved.")
 
 
-    # =================================================
-    # STEP 14: MOST ACTIVE USERS
-    # =================================================
-
     print("\n========== ACTIVE USERS ==========")
 
     active_users = (
@@ -408,9 +369,7 @@ try:
     print("Active users saved.")
 
 
-    # =================================================
-    # STEP 15: SAVE EVALUATION RESULTS
-    # =================================================
+  
 
     print("\n========== FINAL EVALUATION REPORT ==========")
 
@@ -450,9 +409,6 @@ try:
     print("Evaluation results saved:", EVALUATION_PATH)
 
 
-    # =================================================
-    # STEP 16: FINAL SUMMARY
-    # =================================================
 
     print("\n========== PROJECT SUMMARY ==========")
 
@@ -479,9 +435,7 @@ try:
 
 finally:
 
-    # =================================================
-    # STEP 17: CLEANUP
-    # =================================================
+
 
     spark.stop()
 
